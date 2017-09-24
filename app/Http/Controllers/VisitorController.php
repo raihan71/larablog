@@ -49,7 +49,8 @@ class VisitorController extends Controller
      */
     public function show($id)
     {
-        //
+        $data = Post::find($id);
+        return view('single')->with('data', $data);
     }
 
     /**
