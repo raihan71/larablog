@@ -11,6 +11,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>EdnoBlog</title>
+
+
     <!-- Bootstrap Core CSS -->
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
 
@@ -76,26 +78,26 @@
                             </div>
                             <!-- /input-group -->
                         </li>
-                        <li>
-                            <a href="index.html" class="active"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        <li class="{{ Request::is('admin/home') ? 'active' : '' }}">
+                            <a href="{{ url('admin/home') }}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li >
-                            <a href="#"><i class="fa fa-files-o fa-fw"></i> Posting<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-files-o fa-fw"></i> Post<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="blank.html">Create New Post</a>
+                                <li class="{{ Request::is('admin/post/create') ? 'active' : '' }}">
+                                    <a href="{{ url('admin/post/create') }}">Create New Post</a>
                                 </li>
-                                <li>
-                                    <a href="blank.html">All Posts</a>
+                                <li class="{{ Request::is('admin/post') ? 'active' : '' }}">
+                                    <a href="{{ url('admin/post') }}">All Posts</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
                         <li >
-                            <a href="#"><i class="fa fa-tags fa-fw"></i> Categories<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-comments fa-fw"></i> Comment<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="blank.html">Create New Categories</a>
+                                    <a href="blank.html">All Comments</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->

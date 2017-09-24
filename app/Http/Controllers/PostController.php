@@ -15,7 +15,7 @@ class PostController extends Controller
     public function index()
     {
 
-        return view('admin/post');
+        return view('admin/posting');
     }
 
     /**
@@ -25,7 +25,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin/posting-new');
     }
 
     /**
@@ -36,7 +36,12 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $post = new post;
+        $post->title = $request->get('title');
+        $post->desc = $request->get('content');
+        $post->image = $request->get('image');
+        $post->save();
+        return view('admin/posting');
     }
 
     /**
