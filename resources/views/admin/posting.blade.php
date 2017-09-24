@@ -21,86 +21,24 @@
                             <div class="panel-body">
                              <table class="table table-striped">
                                  <tbody>
+                                    @foreach($post as $posts)
                                      <tr>
-                                         <td class="col-md-1 " style="text-align: center;">
-                                         <input type="checkbox" name="checkbox">
+                                         <td class="col-md-1 ">
+                                         <input type="checkbox" name="checkbox" class="form-control">
                                          </td>
                                          <td class="col-md-9">
-                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                        tempor incididunt</p>
+                                         <p>{{$posts->title}}</p>
+                                          <small>{{ $posts->created_at }}</small>
                                         </td>
-                                         <td class="col-md-2">
-                                        <a href="">Edit</a> | 
-                                        <a href="">Preview</a>
+                                         <td class="col-md-2" style="vertical-align: middle;">
+                                        <a href="{{ url('admin/post',[ $posts->id,'edit']) }}">Edit</a> | 
+                                        <a href="{{ url('admin/post',[ $posts->id]) }}">Preview</a>
                                          </td>
-                                     </tr>
-                                     <tr>
-                                         <td class="col-md-1 " style="text-align: center;">
-                                         <input type="checkbox" name="checkbox">
-                                         </td>
-                                         <td class="col-md-9">
-                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                        tempor incididunt</p>
-                                        </td>
-                                         <td class="col-md-2">
-                                        <a href="">Edit</a> | 
-                                        <a href="">Preview</a>
-                                         </td>
-                                     </tr>   
-                                     <tr>
-                                         <td class="col-md-1 " style="text-align: center;">
-                                         <input type="checkbox" name="checkbox">
-                                         </td>
-                                         <td class="col-md-9">
-                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                        tempor incididunt</p>
-                                        </td>
-                                         <td class="col-md-2">
-                                        <a href="">Edit</a> | 
-                                        <a href="">Preview</a>
-                                         </td>
-                                     </tr>
-                                     <tr>
-                                         <td class="col-md-1 " style="text-align: center;">
-                                         <input type="checkbox" name="checkbox">
-                                         </td>
-                                         <td class="col-md-9">
-                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                        tempor incididunt</p>
-                                        </td>
-                                         <td class="col-md-2">
-                                        <a href="">Edit</a> | 
-                                        <a href="">Preview</a>
-                                         </td>
-                                     </tr>
-                                     <tr>
-                                         <td class="col-md-1 " style="text-align: center;">
-                                         <input type="checkbox" name="checkbox">
-                                         </td>
-                                         <td class="col-md-9">
-                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                        tempor incididunt</p>
-                                        </td>
-                                         <td class="col-md-2">
-                                        <a href="">Edit</a> | 
-                                        <a href="">Preview</a>
-                                         </td>
-                                     </tr>
-                                     <tr>
-                                         <td class="col-md-1 " style="text-align: center;">
-                                         <input type="checkbox" name="checkbox">
-                                         </td>
-                                         <td class="col-md-9">
-                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                        tempor incididunt</p>
-                                        </td>
-                                         <td class="col-md-2">
-                                        <a href="">Edit</a> | 
-                                        <a href="">Preview</a>
-                                         </td>
-                                     </tr>
+                                     </tr> 
+                                    @endforeach
                                  </tbody>
                              </table>
+                             {{ $post->links() }}
                             </div>
                         </div>
                     </div>
