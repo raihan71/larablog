@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Post;
 use App\Category;
 class PostController extends Controller
@@ -14,8 +15,9 @@ class PostController extends Controller
      */
     public function index()
     {
+        $post = Post::paginate(10);
+        return view('admin/posting')->with('post',$post);
 
-        return view('admin/posting');
     }
 
     /**
@@ -41,7 +43,11 @@ class PostController extends Controller
         $post->desc = $request->get('content');
         $post->image = $request->get('image');
         $post->save();
+<<<<<<< HEAD
         return view('admin/posting');
+=======
+        return redirect('admin/post');
+>>>>>>> 8ebfeff86296168562c8686268511dba97c8f19c
     }
 
     /**
@@ -63,7 +69,8 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+        $post = post::find($id);
+        return view('admin/posting-edit')->with('post',$post);
     }
 
     /**
@@ -75,7 +82,14 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+       $post = post::find($id);
+       $post->title = $request->get('title');
+       $post->desc = $request->get('content');
+       if($request->get('image')){
+         $post->image = $request->get('image');
+       }
+       $post->save();
+        return redirect('admin/post');
     }
 
     /**
