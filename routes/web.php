@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::resource('/', 'VisitorController');
 
 Route::group(['prefix' => 'admin',  'middleware' => 'auth'], function()
 {
