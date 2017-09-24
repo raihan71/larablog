@@ -43,11 +43,7 @@ class PostController extends Controller
         $post->desc = $request->get('content');
         $post->image = $request->get('image');
         $post->save();
-<<<<<<< HEAD
-        return view('admin/posting');
-=======
         return redirect('admin/post');
->>>>>>> 8ebfeff86296168562c8686268511dba97c8f19c
     }
 
     /**
