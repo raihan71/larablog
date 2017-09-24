@@ -47,11 +47,7 @@ class VisitorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        $data = Post::find($id);
-        return view('single')->with('data', $data);
-    }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -85,5 +81,11 @@ class VisitorController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function showPage($id)
+    {
+        $data = Post::find($id);
+        return view('single')->with('data', $data);
     }
 }

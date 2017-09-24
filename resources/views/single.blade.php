@@ -1,4 +1,4 @@
-<!-- @extends('layouts.visitor-layout')
+@extends('layouts.visitor-layout')
 @section('content')
 <!-- Post Content Column -->
         <div class="col-lg-8">
@@ -93,4 +93,4 @@
           </div>
 
         </div>
-@stop -->
+@stop
