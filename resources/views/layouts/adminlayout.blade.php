@@ -110,7 +110,6 @@
             @yield('content')
     </div>
     <!-- /#wrapper -->
-
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -122,7 +121,8 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/startbootstrap-sb-admin-2/3.3.7+1/js/sb-admin-2.min.js"></script>
-
+    <!-- Check All  -->
+    <script src="{{ asset('js/checkall.js') }}" type="text/javascript"></script>
 </body>
 
 </html>

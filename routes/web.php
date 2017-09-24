@@ -17,7 +17,8 @@ Route::get('pages/{id}', 'VisitorController@showPage');
 Route::group(['prefix' => 'admin',  'middleware' => 'auth'], function()
 {
 	Route::resource('/post','PostController');
-	Route::get('/home', 'HomeController@index')->name('home');   
+	Route::post('/delete','PostController@destroyall');   
+	Route::get('/home', 'HomeController@index')->name('home');
 });
 
 
