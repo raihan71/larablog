@@ -9,9 +9,9 @@
         @foreach($post as $data)
         <div class="card mb-4">
             <div class="card-body">
-              <h2 class="card-title"><a href="{{ url('/'.$data->id)}}">{{$data->title}}</a></h2>
+              <h2 class="card-title"><a href="{{ url('post/'.$data->id)}}">{{$data->title}}</a></h2>
               <img src="{{ URL::asset('image/post/'.$data->image)}}" alt="{{$data->title}}">
-              <p class="card-text">{{str_limit($data->desc, $limit = 10, $end = '...')}}</p>
+              <p class="card-text">{{url($data->desc)}}</p>
               <a href="{{ url('/'.$data->id)}}" class="btn btn-primary">Read More &rarr;</a>
           </div>
           <div class="card-footer text-muted">
