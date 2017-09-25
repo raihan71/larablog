@@ -42,7 +42,7 @@ class PostController extends Controller
         $post->title = $request->get('title');
         $post->desc = $request->get('content');
        if($request->hasFile('image')){
-         $post->image = $request->file('image')->store('images');
+         $post->image = $request->get('image');
 
          $imageName = time().'.'.$request->image->getClientOriginalExtension();
          $request->image->move(public_path('/images'), $imageName);
@@ -89,7 +89,7 @@ class PostController extends Controller
        $post->title = $request->get('title');
        $post->desc = $request->get('content');
        if($request->hasFile('image')){
-         $post->image = $request->file('image')->store('images');
+         $post->image = $request->get('image');
          
          $imageName = time().'.'.$request->image->getClientOriginalExtension();
          $request->image->move(public_path('/images'), $imageName);
