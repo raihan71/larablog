@@ -29,7 +29,7 @@
   <hr>
 
   <!-- Preview Image -->
-  <img class="img-fluid rounded" src="{{URL::asset('images/post'.$data->image)}}" alt="{{$data->title}}">
+  <img class="img-fluid rounded" src="{{URL::asset('images/post'.$data->image)}}" alt="No Gambar">
 
   <hr>
 
