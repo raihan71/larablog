@@ -12,8 +12,8 @@
 */
 
 Route::resource('/', 'VisitorController');
-Route::get('/post/{id}', 'VisitorController@showPage');
 
+Route::get('/post/{id}', 'VisitorController@showPage');
 
 Route::group(['prefix' => 'admin',  'middleware' => 'auth'], function()
 {
