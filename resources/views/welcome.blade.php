@@ -9,7 +9,7 @@
   <div class="card mb-4">
     <div class="card-body">
       <h2 class="card-title"><a href="{{ url('post/'.$data->id)}}">{{$data->title}}</a></h2>
-      <img src="{{ URL::asset('image/post/'.$data->image)}}" alt="{{$data->title}}">
+      <img src="{{ URL::asset('images/'.$data->image)}}" alt="No Gambar">
       <p class="card-text">{{str_limit($data->desc, $limit = 500, $end = '...')}}</p>
       <a href="{{ url('/'.$data->id)}}" class="btn btn-primary">Read More &rarr;</a>
     </div>
