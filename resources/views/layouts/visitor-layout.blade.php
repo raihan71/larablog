@@ -22,6 +22,9 @@
 
     <!-- Custom Fonts -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    @yield('style-css')
+
     <style>
         html, body {
             background-color: #fff;

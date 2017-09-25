@@ -2,18 +2,17 @@
 @section('content')
 <!-- Blog Entries Column -->
         <div class="col-md-12 col-sm-12 col-xs-12" style="text-align: left;">
-
-        <h1 class="my-4">News
+        <h1>News
         </h1>
 
         <!-- Blog Post -->
         @foreach($post as $data)
         <div class="card mb-4">
             <div class="card-body">
-              <h2 class="card-title"><a href="{{ url('pages/'.$data->id)}}">{{$data->title}}</a></h2>
+              <h2 class="card-title"><a href="{{ url('/'.$data->id)}}">{{$data->title}}</a></h2>
               <img src="{{ URL::asset('image/post/'.$data->image)}}" alt="{{$data->title}}">
-              <p class="card-text">{{$data->desc}}</p>
-              <a href="#" class="btn btn-primary">Read More &rarr;</a>
+              <p class="card-text">{{str_limit($data->desc, $limit = 10, $end = '...')}}</p>
+              <a href="{{ url('/'.$data->id)}}" class="btn btn-primary">Read More &rarr;</a>
           </div>
           <div class="card-footer text-muted">
            {{$data->created_at}}
