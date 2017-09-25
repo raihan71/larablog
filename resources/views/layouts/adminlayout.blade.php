@@ -95,7 +95,7 @@
                             <a href="#"><i class="fa fa-comments fa-fw"></i> Comment<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="blank.html">All Comments</a>
+                                    <a href="{{ url('admin/comment') }}">All Comments</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->

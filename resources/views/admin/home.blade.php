@@ -14,7 +14,7 @@
 						  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 						  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 						  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-						  <p><a class="btn btn-primary btn-lg" href="#" role="button">Write Something</a></p>
+						  <p><a class="btn btn-primary btn-lg" href="{{ url('admin/post/create') }}" role="button">Write Something</a></p>
 						</div>
                     </div>
                     <!-- /.col-lg-12 -->
