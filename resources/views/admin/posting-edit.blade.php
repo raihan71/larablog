@@ -33,6 +33,7 @@
                                         {{csrf_field()}}
                                         {{ method_field('PATCH') }}
                                         <input type="submit" name="submit" value="Submit" class="btn btn-primary">
+                                        <a href="{{ url('admin/post') }}" class="btn btn-default">Back</a>
                                     </div>
                                 </form>
                             </div>

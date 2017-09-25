@@ -41,7 +41,14 @@ class PostController extends Controller
         $post = new post;
         $post->title = $request->get('title');
         $post->desc = $request->get('content');
-        $post->image = $request->get('image');
+       if($request->hasFile('image')){
+         $post->image = $request->file('image')->store('images');
+
+         $imageName = time().'.'.$request->image->getClientOriginalExtension();
+         $request->image->move(public_path('/images'), $imageName);
+        }else{
+         $post->image = ('images/default.jpg');
+        }
         $post->save();
         return redirect('admin/post');
     }
@@ -81,9 +88,12 @@ class PostController extends Controller
        $post = post::find($id);
        $post->title = $request->get('title');
        $post->desc = $request->get('content');
-       if($request->get('image')){
-         $post->image = $request->get('image');
-       }
+       if($request->hasFile('image')){
+         $post->image = $request->file('image')->store('images');
+         
+         $imageName = time().'.'.$request->image->getClientOriginalExtension();
+         $request->image->move(public_path('/images'), $imageName);
+        }
        $post->save();
         return redirect('admin/post');
     }
@@ -94,8 +104,18 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+
+     // Massive delete for checkbox All
+
+    public function destroyall(Request $request)
     {
-        //
+        if(count(collect($request->checkbox)) > 1){
+          $post = post::whereIn('id',$request->get('checkbox'));
+          $post->delete();
+        }else{
+          $post = post::find($request->get('checkbox'))->first();
+          $post->delete();
+        }
+        return back();
     }
 }
