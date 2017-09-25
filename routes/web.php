@@ -14,11 +14,13 @@
 Route::resource('/', 'VisitorController');
 Route::get('/post/{id}', 'VisitorController@showPage');
 
+
 Route::group(['prefix' => 'admin',  'middleware' => 'auth'], function()
 {
 	Route::resource('/post','PostController');
-	Route::post('/delete','PostController@destroyall');   
+	Route::post('/delete','PostController@destroyall');
 	Route::get('/home', 'HomeController@index')->name('home');
+	Route::get('/comment','CommentController@index');   
 });
 
 
